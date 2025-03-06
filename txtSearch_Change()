@@ -1,0 +1,10 @@
+Private Sub txtSearch_Change() ' O tim kiem
+Application.ScreenUpdating = False ' Tat lam moi man hinh de tang toc do xu ly
+If LCase(Range("K6")) <> "" Then ' Chuyen ky tu o tim kiem ve chu thuong va kiem tra xem co du lieu khong?
+Range("Table1").AutoFilter Field:=11, Criteria1:="*" & LCase(Range("K6").Value) & "*" ' Kiem tra du lieu o o tim kiem trong bang table1 và cot 11
+Else
+Range("Table1").AutoFilter Field:=11
+
+End If
+ Application.ScreenUpdating = True
+End Sub
